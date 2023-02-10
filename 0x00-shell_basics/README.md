@@ -1,1 +1,1 @@
-i am a developer
+i am in school
