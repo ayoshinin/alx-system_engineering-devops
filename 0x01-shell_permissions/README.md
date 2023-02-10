@@ -1,1 +1,1 @@
-i am a link
+i link symbolic
