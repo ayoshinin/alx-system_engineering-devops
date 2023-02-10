@@ -1,1 +1,1 @@
-i link symbolic
+i am a star boy
