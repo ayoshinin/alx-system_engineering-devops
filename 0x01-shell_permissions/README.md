@@ -1,1 +1,1 @@
-am a done
+i own the mirror
