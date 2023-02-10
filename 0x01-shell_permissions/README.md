@@ -1,1 +1,1 @@
-everbody is fine
+bond is wealth
