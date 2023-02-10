@@ -1,1 +1,1 @@
-i own the mirror
+list directories
