@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#share your SSH client configuration
+private key ~/.ssh/school
+passwordAuthentication no
+PubkeyAuthentication yes
