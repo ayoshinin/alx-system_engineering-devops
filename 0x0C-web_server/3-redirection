@@ -1,13 +1,15 @@
 
 #!/usr/bin/env bash
-# Installs, configures, and starts the server
+# Script to configure Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page
 apt-get update
 apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-mkdir -p /var/www/html/
-sudo chmod -R 755 /var/www
+ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html /var/www/error
+chmod -R 755 /var/www
 echo 'Hello World!' > /var/www/html/index.html
-SERVER_CONFIG=\
+echo -e "Ceci n\x27est pas une page" > /var/www/error/404.html
+
+CONFIG=\
 "server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
@@ -18,11 +20,11 @@ SERVER_CONFIG=\
 		try_files \$uri \$uri/ =404;
 	}
 	if (\$request_filename ~ redirect_me){
-		rewrite ^ https://sketchfab.com/bluepeno/models permanent;
+		rewrite ^ https://m.facebook.com/ashaju.ronke permanent;
 	}
 }"
 
-bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+bash -c "echo -e '$CONFIG' > /etc/nginx/sites-enabled/default"
 
 if [ "$(pgrep -c nginx)" -le 0 ]; then
 	service nginx start
