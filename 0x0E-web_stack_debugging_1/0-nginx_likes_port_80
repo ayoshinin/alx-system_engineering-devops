@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Setting up server to curl port 80 with no issues and reload
+apt-get update
+apt-get -y install curl
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
