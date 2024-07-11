@@ -1,1 +1,1 @@
-load balancing server
+Load balancer

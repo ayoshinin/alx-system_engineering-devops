@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 # script that install and configure the load balancer
 apt-get update
@@ -6,7 +7,7 @@ add-apt-repository -y ppa:vbernat/haproxy-2.6
 apt-get -y install haproxy
 
 # configure the load balancer
-DOMAIN='dunamisweb.tech'
+DOMAIN='d4lton.tech'
 INITIALIZATION='/etc/default/haproxy'
 CONFIG='/etc/haproxy/haproxy.cfg'
 LB_CONFIG=\
@@ -52,3 +53,4 @@ if [ "$(pgrep -c haproxy)" -le 0 ]; then
 else
         service haproxy restart
 fi
+
