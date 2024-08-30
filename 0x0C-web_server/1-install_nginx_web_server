@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Update package list and install Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Ensure Nginx is running
+sudo service nginx start
+
+# Create the HTML file that will be served at the root
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+# Ensure Nginx is listening on port 80 (default configuration)
+# No need to modify default Nginx config as it listens on port 80 by default
+
+# Restart Nginx without using systemctl (use service command instead)
+sudo service nginx restart
+
+# Test to ensure the setup is correct
+curl -s http://127.0.0.1 | grep "Hello World!" && echo "Nginx is configured correctly."
+
